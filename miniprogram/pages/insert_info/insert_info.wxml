@@ -1,0 +1,19 @@
+<!--pages/insert_info/insert_info.wxml-->
+<view class="section">
+  <view class="picker">
+  <picker class='picker1' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      请选择所属科室：{{array[index]}}
+  </picker>
+  </view>
+  <view class="weui-cell_input">
+    <input class="weui-input" bindinput="bindKeyInput" placeholder="请输入科室/疾病的名称"/>
+  </view>
+  <view class="submitBtnView">
+  <button class="submitBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap='submit'>提交</button>
+  </view>
+</view>
+
+
+
+
+  

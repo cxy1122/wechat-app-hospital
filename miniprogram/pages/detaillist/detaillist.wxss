@@ -1,0 +1,44 @@
+/* pages/detaillist/detaillist.wxss */
+.list{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100;
+}
+
+.pro-box{
+  position: fixed;
+  left: 0;
+  width: 100% ;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.pro-item{
+  padding: 20rpx;
+  height: 40px;
+  border-bottom: 1rpx solid rgb(47, 206, 68);
+}
+
+.pro-text{
+  width: calc(100% - 180rpx);
+  margin-left: 20rpx;
+}
+
+.pro-name{
+  height: 120rpx;
+  padding: 0%;
+  border: 0ch;
+  margin: 0ch;
+  width:max-content;
+}
+
+.title-name{
+  font-size: 15px;
+  color: #070000;
+  width:max-content;
+
+}

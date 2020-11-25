@@ -1,0 +1,22 @@
+<!--pages/detaillist/detaillist.wxml-->
+<!-- 引入截取文章片段的脚本-->
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<view class="detaillist">
+
+<!-- 展示区域 -->
+<view class="list">
+
+  <!-- 文章列表 -->
+  <scroll-view class="fl pro-box">
+    <view class="pro-item clearfix" wx:for="{{listData}}" wx:key="index" data-html="{{item.html}}" bindtap="goPaper">
+      <!-- 病类文本 -->
+      <view class="pro-text fl">
+        <view class="pro-name">
+          <view class="title-name">{{item.titlename}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+</view>

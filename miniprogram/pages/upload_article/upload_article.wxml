@@ -1,0 +1,32 @@
+
+<view class="update">
+  <richText 
+  id='richText' 
+  readOnly='{{readOnly}}'
+  placeholder='{{placeholder}}' 
+  formatDate='YY/MM/DD'
+  buttonTxt='保存'
+  bind:clearBeforeEvent='clearBeforeEvent'
+  bind:clearSuccess='clearSuccess'
+  bind:undo='undo'
+  bind:restore='restore'
+  bind:onEditorReady='onEditorReady' 
+  bind:bindfocus='bindfocus' 
+  bind:bindblur='bindblur' 
+  bind:bindinput='bindinput' 
+  bind:insertImageEvent='insertImageEvent' 
+  bind:getEditorContent='getEditorContent'>请先输入标题</richText>
+
+  <view class="section">
+    <view class="section__title">选择文章所属的科室与疾病</view>
+    <picker class="picker2" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+      </view>
+    </picker>
+  </view>
+  <view class="section1">
+    <view class="section__title">请输入文章标题</view>
+    <input class="inputText" placeholder="文章标题" bindinput="TitleInput" />
+  </view>
+</view> 

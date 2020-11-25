@@ -1,0 +1,30 @@
+<!--pages/delete_info/delete_info.wxml-->
+<view class="section__title">删除科室</view>
+  <picker class="picker1" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      请选择科室：{{array[index]}}
+    </view>
+  </picker>
+
+  <button bindtap='submit1'>确定删除科室</button>
+
+  <view class="section">
+  <view class="section__title">删除疾病</view>
+  <picker class="picker2" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
+</view>
+<button bindtap='submit2'>确定删除疾病</button>
+
+<view class='list' style="display:flex; flex-direction:column">
+  <view class="item" wx:for="{{listdata}}" wx:key="{{article_id}}" style="display:flex; flex-direction:column" bindtouchstart="delItem">
+    <text class="name">{{item.name}}</text>
+    <text>这块还没写好</text>
+  </view>
+</view>
+<button bindtap='submit3'>确定删除文章</button>
+
+
+  

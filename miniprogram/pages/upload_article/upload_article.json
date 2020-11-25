@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "richText":"../../components/richText/richText"
+  },
+  "navigationBarTitleText": "编辑保存文章"
+}

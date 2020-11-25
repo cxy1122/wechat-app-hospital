@@ -1,0 +1,7 @@
+/* pages/delete_info/delete_info.wxss */
+.picker1{
+  background-color: brown;
+}
+.picker2{
+ background-color: brown;
+}

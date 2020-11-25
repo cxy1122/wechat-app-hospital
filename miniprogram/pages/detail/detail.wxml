@@ -1,0 +1,8 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<!--pages/article/article.wxml-->
+<view class="page-body">
+    <view class='wrapper'>
+      <editor id="editor" class="ql-container" placeholder="{{placeholder}}" showImgSize showImgToolbar showImgResize  read-only="true" bindfocus='bindfocus' bindblur='bindblur' bindinput='bindinput'>
+      </editor>
+    </view>
+</view>

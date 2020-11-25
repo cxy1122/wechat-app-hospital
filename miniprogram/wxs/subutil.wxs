@@ -1,0 +1,20 @@
+var sub = function(val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+
+  if(val.substring(0,7)=="<p><img"){
+    return val.substring(300,350)+ "...";
+  }
+  else if(val.substring(0,12)=="<p wx:nodeid"){
+    return val.substring(18,68)+ "...";
+  }
+  else {
+    if (val.length > 56) {
+      return val.substring(3, 53) + "...";
+    } else {
+      return val.substring(3,val.length-4);
+    }
+  } 
+}
+module.exports.sub = sub;

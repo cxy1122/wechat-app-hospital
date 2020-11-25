@@ -1,0 +1,66 @@
+/* pages/actionlist/actionlist.wxss */
+.background { 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  padding: 0; 
+  box-sizing: border-box; 
+  /* background-color: rgb(156, 23, 78) */
+ }
+  /*按钮*/
+  .insertBtnView { 
+    width: 100%; 
+    height: auto; 
+    /* background-color:#DCDCDC;  */
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    padding-bottom: 0px; 
+   } 
+    
+   .insertBtn { 
+    width: 90%; 
+    margin-top: 40px; 
+    border-radius:10px;
+   }
+   .deleteBtnView { 
+    width: 100%; 
+    height: auto; 
+    /* background-color:#DCDCDC;  */
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    padding-bottom: 0px; 
+   } 
+    
+   .deleteBtn { 
+    width: 90%; 
+    margin-top: 40px; 
+    border-radius:10px;
+   }
+   .zipBtnView { 
+    width: 100%; 
+    height: auto; 
+    /* background-color:#DCDCDC;  */
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    padding-bottom: 0px; 
+   } 
+    
+   .zipBtn { 
+    width: 90%; 
+    margin-top: 40px; 
+    border-radius:10px;
+   }
+   .uploadBtnView { 
+    width: 100%; 
+    height: auto; 
+    /* background-color:#DCDCDC;  */
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    padding-bottom: 0px; 
+   } 
+    
+   .uploadBtn { 
+    width: 90%; 
+    margin-top: 40px; 
+    border-radius:10px;
+   }

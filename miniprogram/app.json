@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detaillist/detaillist",
+    "pages/detail/detail",
+    "pages/admin/admin",
+    "pages/actionlist/actionlist",
+    "pages/insert_info/insert_info",
+    "pages/delete_info/delete_info",
+    "pages/zip_info/zip_info",
+    "pages/upload_article/upload_article",
+    "pages/previewpaper/previewpaper"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#B0B0B0",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/icon/index.png",
+        "selectedIconPath": "./images/icon/index_active.png"
+      },
+      {
+        "pagePath": "pages/admin/admin",
+        "text": "管理员",
+        "iconPath": "./images/icon/admin.png",
+        "selectedIconPath": "./images/icon/admin_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
