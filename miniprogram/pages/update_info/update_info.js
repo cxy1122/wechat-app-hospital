@@ -1,4 +1,3 @@
-// pages/delete_info/delete_info.js
 const app = getApp();
 Page({
 
@@ -9,10 +8,20 @@ Page({
     department_name:{},
     disease_name:{},
     multiArray: [],
-    multiIndex: [],
+    multiIndex: [0,0],
     fileid:{},
-    listdata:[]
+    listdata:[],
+    index_dept:0,
+    index_dise:0
   },
+  bindPickerCancel: function(e){
+    console.log("点击了取消")
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      title:'警告',
+      content:'您并没有选择当前值，请重新选择并点击确认,否则会发生错误!',
+  })
+},
   bindMultiPickerChange: function (e) {
     var disease_key=0;
     var diseaseList=this.data.diseaseList;
@@ -45,22 +54,29 @@ Page({
       case 0:
         var departmentList = this.data.departmentList;
         var department_name = departmentList[e.detail.value]['name'];
+        this.setData({
+          index_dept: e.detail.value
+        })
         if(department_name_session!=department_name){
           this.getDisease(department_name);
         }
-        data.multiIndex[1] = 0;
+        data.multiIndex[1] = this.data.index_dise;
         break;
+        case 1:
+          this.setData({
+            index_dise: e.detail.value
+          })
+          break;
       };
     this.setData(data);
-  },
-  submit2(e){
-    /**删除疾病，触发二次确认 */
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getdepartmentData(); 
+    this.getpaperlist(this.data.disease_name='荨麻疹',this.data.department_name);//设荨麻疹为默认值是因为刚进页面获取不到default的disease
   },
 //获取科室数据
 getdepartmentData: function(){
@@ -69,8 +85,8 @@ getdepartmentData: function(){
     title: '加载中...',
     })
   wx.cloud.callFunction({
+    config : {env : 'medremangement-cloud-8bn8d3d8486'},
     name:'get_departments',
-    config:{ env: 'medremangement-cloud-8bn8d3d8486' },      
     data:{},    
     success: res => {
       // 关闭加载提示
@@ -111,8 +127,8 @@ getDisease: function (name) {
     })
   //调用云函数【get_disease】获取疾病
   wx.cloud.callFunction({
+    config : {env : 'medremangement-cloud-8bn8d3d8486'},
     name: 'get_disease',
-    config:{ env: 'medremangement-cloud-8bn8d3d8486' },      
     //参数
     data: {
     name: name
@@ -173,40 +189,31 @@ getpaperlist: function (disease,department) {
     }
   })
 },
-delItem: function(e){
+updateItem: function(e){
   var thiss=this;
-   var id = e.currentTarget.dataset.index;
+  var id = e.currentTarget.dataset.index;
+  console.log("id"+ id);
   wx.showModal({
     cancelColor: 'cancelColor',
     title:'提示',
-    content:'确认删除该文章？（删除不可恢复）',
+    content:'确认修改？（跳转至编辑界面）',
     success : function(res){
       if(res.confirm){
-        console.log('用户确定删除这篇文章');
-             //数据删除
-        console.log(thiss.data.listdata[id]._id)
-        wx.cloud.callFunction({
-        config:{ env: 'medremangement-cloud-8bn8d3d8486' },
-        name:'delete_paper',
-        data: {
-          _id: thiss.data.listdata[id]._id
-         },
-         success: res =>{
-           console.log("云函数删除成功")
-        }
-       })
-        //视图层删除
-        thiss.data.listdata.splice(id,1)
-        thiss.setData({
-          listdata: thiss.data.listdata
-        })
-        wx.showToast({
-          title: '删除成功',
-          icon:'success',
+        console.log('用户确定修改这篇文章');
+        var obj = JSON.stringify(thiss.data.listdata[id]);
+        wx.navigateTo({
+          url: '../upload_article/upload_article?obj='+ encodeURIComponent(obj)+'&index1='+thiss.data.index_dept+'&index2='+thiss.data.index_dise,
+          success:function(res){
+            console.log("传文章对象成功")
+          },
+          fail:function(res){
+            console.log("传文章对象失败")
+          }
         })
       }else if(res.cancel){
         console.log('用户取消删除')
       }
+
     }
   })
 },
@@ -221,7 +228,8 @@ delItem: function(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getdepartmentData(); 
+    this.getpaperlist(this.data.disease_name,this.data.department_name);
   },
 
   /**

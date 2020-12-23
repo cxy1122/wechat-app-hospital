@@ -3,18 +3,11 @@ var sub = function(val) {
     return;
   }
 
-  if(val.substring(0,7)=="<p><img"){
-    return val.substring(300,350)+ "...";
-  }
-  else if(val.substring(0,12)=="<p wx:nodeid"){
-    return val.substring(18,68)+ "...";
-  }
-  else {
-    if (val.length > 56) {
-      return val.substring(3, 53) + "...";
+    if (val.length > 20) {
+      return val.substring(0, 19) + "...";
     } else {
-      return val.substring(3,val.length-4);
+      return val;
     }
   } 
-}
+
 module.exports.sub = sub;

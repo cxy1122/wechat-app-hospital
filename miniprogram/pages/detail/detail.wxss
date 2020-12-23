@@ -14,7 +14,6 @@ page {
   min-height: 30vh;
   height: auto;
   background: #fff;
-  font-size: 16px;
   line-height: 1.5;
 }
 

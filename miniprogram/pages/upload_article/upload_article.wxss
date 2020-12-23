@@ -8,7 +8,7 @@
   text-align: center;
   font-size:30rpx;
   color: #180303;
-  background-color: #13e213; 
+  background-color: #bbeeea; 
 }
 .tip{
   color: #999;
@@ -32,10 +32,10 @@
   line-height: 80rpx;
   flex: block; 
   float: right; 
-  text-align: right; 
+  text-align: left; 
   margin: 0 auto;
   color: #050000; 
   font-size: 14px;
-  background-color: #13e2e2; 
+  background-color: #bbeeea; 
   margin-bottom: 50rpx;
  } 

@@ -14,15 +14,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //截取参数
-    var disease = options.disease;
-    var department = options.department;
-    // console.log('id ==> ', id);
-    this.getpaperlist(disease,department);
+    this.getpaperlist();
   },
 
   //获取病类数据
-  getpaperlist: function (disease,department) {
+  getpaperlist: function () {
 
     //加载提示
     wx.showLoading({
@@ -35,8 +31,8 @@ Page({
       name: 'get_paperlist',
       //参数
       data: {
-        disease:disease,
-        department:department
+        disease:'永峥医聊',
+        department:'永峥医聊'
       },
   
       success: res => {
@@ -51,15 +47,13 @@ Page({
         if(this.data.listData.length==0)
         {
           wx.showToast({
-            title:'该疾病还没有任何文章!',
+            title:'永峥医聊还没有任何文章!',
             icon:'none',
             duration:2000
           }
-
           )
         }
       },
-  
       fail: err => {
         // 关闭加载提示
         wx.hideLoading();
@@ -74,7 +68,6 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?html=' + html 
     })
-
     
   },
 
@@ -89,7 +82,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getpaperlist();
   },
 
   /**

@@ -26,11 +26,11 @@
   <scroll-view class="fl pro-box" scroll-y='true'>
     <view class="pro-item clearfix" wx:for="{{diseaseData}}" wx:key="index" data-name="{{item.name}}" bindtap="goDetail">
       <!-- 病类文本 -->
-      <view class="pro-text fl">
-        <view class="pro-name">
+      <view class="pro-text fl">{{item.name}}</view>
+        <!-- <view class="pro-name">
           <view class="ch-name">{{item.name}}</view>
         </view>
-      </view>
+      </view> -->
     </view>
   </scroll-view>
 

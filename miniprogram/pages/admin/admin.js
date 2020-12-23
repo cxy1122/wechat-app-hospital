@@ -54,39 +54,10 @@ Page({
         })
         console.log(this.data.ne)
       }
-    })
-    if (this.data.username.length == 0 || this.data.password.length == 0) {   
-      wx.showToast({
-        title: '账号或密码不能为空',
-        icon: 'none',
-        duration: 2000
-      })
-    } else {
-      try{
-      if(this.data.username == this.data.ne[0].name && this.data.password == this.data.ne[0].password){
-        wx.navigateTo({
-          url: '../actionlist/actionlist'
-        })
-      }
-      else{   
-        wx.showToast({
-          title: '账号与密码不匹配',
-          icon: 'none',
-          duration: 2000
-        })
-      }}catch(err) {
-        var errmess = "err ==> "+err
-        console.log(errmess)
-        console.log('err ==> ', err);
-      }finally{
-        if(errmess=="err ==> TypeError: Cannot read property 'name' of undefined"){
-         wx.navigateTo({
-           url: '../actionlist/actionlist'
-          })
-        }
-      }
-     
-    
+    }) 
+    setTimeout(function () {
+    that.loginin();
+    }, 500) 
       // wx.request({
       //   url: app.globalData.globalReqUrl +'/login/login', // 仅为示例，并非真实的接口地址
       //   method: 'post',
@@ -114,7 +85,40 @@ Page({
       //       })
       //     }
       //   }
-      // })
-    }
+      // })   
+  },
+  loginin(){
+    if (this.data.username.length == 0 || this.data.password.length == 0) {   
+      wx.showToast({
+        title: '账号或密码不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      try{
+      if(this.data.username == this.data.ne[0].name && this.data.password == this.data.ne[0].password){
+        wx.navigateTo({
+          url: '../actionlist/actionlist'
+        })
+      }
+      else{   
+        wx.showToast({
+          title: '账号与密码不匹配',
+          icon: 'none',
+          duration: 2000
+        })
+      }}catch(err) {
+        var errmess = "err ==> "+err
+        console.log(errmess)
+        console.log('err ==> ', err);
+      }finally{
+        // if(errmess=="err ==> TypeError: Cannot read property 'name' of undefined"){
+        //  wx.navigateTo({
+        //    url: '../actionlist/actionlist'
+        //   })
+        }
+      }
+
   }
+
 })

@@ -1,22 +1,22 @@
 .swiper{
-  height: 326.086rpx;
+  height: 440rpx;
 }
 
 .swiper-img{
-  height: 326.086rpx;
+  height: 440rpx;
 }
 
 .disease{
   position: fixed;
-  top: 326.086rpx;
+  top: 440rpx;
   left: 0;
   width: 100%;
-  height: calc(100% - 326.086rpx);
+  height: calc(100% - 440rpx);
 }
 
 .aside{
   position: absolute;
-  width: 200rpx;
+  width: 250rpx;
   height: 100%;
   background-color: #f5f5f5;
 }
@@ -41,8 +41,8 @@
 
 .pro-box{
   position: absolute;
-  left: 200rpx;
-  width: calc(100% - 200rpx);
+  left: 250rpx;
+  width: calc(100% - 250rpx);
   height: 100%;
   overflow-y: auto;
   background-color: rgb(255, 255, 255);
@@ -51,12 +51,14 @@
 
 .pro-item{
   padding: 20rpx;
-  border-bottom: 1rpx solid rgb(124, 124, 126);
+  border-bottom: 0.5rpx solid rgb(213, 224, 224);
 }
 
 .pro-text{
-  width: calc(100% - 180rpx);
+  width: calc(100% - 50rpx);
   margin-left: 20rpx;
+  text-align: center;
+  height: 56rpx;
 }
 
 .pro-name{

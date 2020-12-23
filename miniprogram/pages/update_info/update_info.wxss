@@ -1,17 +1,18 @@
-/* pages/detaillist/detaillist.wxss */
+/* pages/delete_info/delete_info.wxss */
 
-
-.list{
-  top: 0;
-  left: 0;
+.picker2{
   width: 100%;
-  height: 100;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  margin-bottom: 50rpx;
+  text-align: center;
+  font-size:30rpx;
+  color: #180303;
+  background-color: #bbeeea; 
 }
-
-
-
 .pro-box{
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100% ;
   height: 100%;
@@ -22,25 +23,32 @@
 
 .pro-item{
   padding: 20rpx;
-  padding-bottom: 0rpx;
-  height: 50px;
+  height: 40px;
   border-bottom: 0.5rpx solid rgb(213, 224, 224);
 }
 
 .pro-text{
-  width: 100%;
+  width: calc(100% - 180rpx);
   margin-left: 20rpx;
+}
+
+.pro-name{
+  height: 120rpx;
   padding: 0%;
+  border: 0ch;
+  margin: 0ch;
+  width:max-content;
 }
 
 .title-name{
-  font-size: 17px;
+  font-size: 15px;
   color: #070000;
   width:max-content;
+
 }
+
 .title-date{
   font-size: 10px;
   color: #676870;
   width:max-content;
-  margin-top: 10px;
 }

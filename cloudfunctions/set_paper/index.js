@@ -13,9 +13,11 @@ exports.main = async (event, context) => {
     return await db.collection('papers').add({
     data: {
       html:event.html,
+      texthtml:event.texthtml,
       department:event.department,
       disease:event.disease,
-      titlename:event.titlename
+      titlename:event.titlename,
+      date:event.date,
     }
   }).get();
     

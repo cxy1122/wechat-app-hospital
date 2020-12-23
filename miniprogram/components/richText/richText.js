@@ -22,6 +22,10 @@ Component({
     buttonTxt: {
       type: String,
       value: '上传'
+    },
+    html:{
+      type: String,
+      value: ''
     }
   },
 
@@ -73,9 +77,10 @@ Component({
       this.createSelectorQuery().select('#editor').context(res => {
         console.log('createSelectorQuery=>', res)
         this.editorCtx = res.context;
-        let rtTxt = '';
-        this.setContents(rtTxt); //设置富文本内容
+        //let rtTxt = 'aaa';
+        this.setContents(this.data.html); //设置富文本内容
       }).exec();
+      console.log('编辑器初始化完成时触发结束1')
     },
 
     //设置富文本内容
@@ -164,9 +169,9 @@ Component({
     },
 
     //插入图片事件
-      insertImageEvent() {
-      //触发父组件选择图片方法
-      this.triggerEvent('insertImageEvent', {});
+    insertImageEvent() {
+    //触发父组件选择图片方法
+    this.triggerEvent('insertImageEvent', {});
     },
 
     /**

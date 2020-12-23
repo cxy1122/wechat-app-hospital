@@ -1,16 +1,19 @@
 <!--pages/actionlist/actionlist.wxml-->
 <view class="background">
-  <!-- <view class="insertBtnView">
+   <!-- <view class="insertBtnView">
     <button class="insertBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="button_insert">添加信息</button>
-  </view>
-  <view class="deleteBtnView">
-    <button class="deleteBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" pslain="{{plain}}" disabled="{{disabled}}"  bindtap="button_delete">删除信息</button>
   </view> -->
-  <view class="zipBtnView">
-    <button class="zipBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"  bindtap="button_zip">文章打包</button>
-  </view>
   <view class="uploadBtnView">
     <button class="uploadBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"  bindtap="button_upload">上传文章</button>
   </view>
+  <view class="deleteBtnView">
+    <button class="deleteBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" pslain="{{plain}}" disabled="{{disabled}}"  bindtap="button_delete">删除文章</button>
+  </view> 
+  <view class="uploadBtnView">
+    <button class="uploadBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"  bindtap="button_update">修改文章</button>
+  </view>
+  <!-- <view class="zipBtnView">
+    <button class="zipBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"  bindtap="button_zip">文章下载</button>
+  </view> -->
 </view>
 

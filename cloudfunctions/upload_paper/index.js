@@ -6,17 +6,13 @@ cloud.init({
 //获取数据库引用
 var db = cloud.database();
 
-
 // 云函数入口函数
 exports.main = async (event, context) => {
-  try {
-    return await db.collection('papers').where({
-      department: event.department,
-      disease: event.disease
-    }).get();
-
-  } catch (err) {
-    console.log('云函数调用失败 err ==> ', err);
-  }
-
+  const res = await cloud.uploadFile({
+    cloudPath: event.cloudpath,
+    fileContent: event.buf,
+  })
+  const fileid = res.fileID;
+  console.log('fileid'+res.fileID);
+  return fileid;
 }

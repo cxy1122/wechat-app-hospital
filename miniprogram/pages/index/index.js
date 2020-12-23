@@ -9,10 +9,13 @@ Page({
     //轮播图数据
     bannerData: [
       {
-        imgUrl: 'cloud://medremangement-cloud-8bn8d3d8486.6d65-medremangement-cloud-8bn8d3d8486-1303981533/bannerimg/p1.jpg'
+        imgUrl: 'cloud://medremangement-cloud-8bn8d3d8486.6d65-medremangement-cloud-8bn8d3d8486-1303981533/bannerimg/1.jpg'
       },
       {
-        imgUrl: 'cloud://medremangement-cloud-8bn8d3d8486.6d65-medremangement-cloud-8bn8d3d8486-1303981533/bannerimg/p2.jpg'
+        imgUrl: 'cloud://medremangement-cloud-8bn8d3d8486.6d65-medremangement-cloud-8bn8d3d8486-1303981533/bannerimg/2.png'
+      },
+      {
+        imgUrl: 'cloud://medremangement-cloud-8bn8d3d8486.6d65-medremangement-cloud-8bn8d3d8486-1303981533/bannerimg/3.jpg'
       }
     ],
 
@@ -63,7 +66,7 @@ Page({
   toggleAsideMenu: function (e) {
     //e: 事件对象
     // console.log('e ==> ', e);
-
+    
     //如果当前选中, 则不做任何事情
     if (e.currentTarget.dataset.active) {
       console.log('拦截');

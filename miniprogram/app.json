@@ -5,11 +5,11 @@
     "pages/detail/detail",
     "pages/admin/admin",
     "pages/actionlist/actionlist",
-    "pages/insert_info/insert_info",
     "pages/delete_info/delete_info",
     "pages/zip_info/zip_info",
     "pages/upload_article/upload_article",
-    "pages/previewpaper/previewpaper"
+    "pages/update_info/update_info",
+    "pages/yzdetail/yzdetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -29,6 +29,12 @@
         "text": "首页",
         "iconPath": "./images/icon/index.png",
         "selectedIconPath": "./images/icon/index_active.png"
+      },
+      {
+        "pagePath": "pages/yzdetail/yzdetail",
+        "text": "永峥医聊",
+        "iconPath": "./images/icon/order.png",
+        "selectedIconPath": "./images/icon/order_active.png"
       },
       {
         "pagePath": "pages/admin/admin",

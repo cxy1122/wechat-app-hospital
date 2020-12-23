@@ -6,7 +6,6 @@ page {
   padding-bottom: 100rpx;
 }
 .editor-toolbar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -72,7 +71,6 @@ page {
   min-height: 30vh;
   height: auto;
   background: #fff;
-  font-size: 16px;
   line-height: 1.5;
 }
 

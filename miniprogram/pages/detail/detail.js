@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    htmlData:''
+
   },
 
   /**
@@ -15,7 +15,6 @@ Page({
   onLoad: function (options) {
     //截取参数
     var html = decodeURIComponent(options.html);  
-    console.log(html) 
     this.getPaper(html);
   },
 
@@ -25,54 +24,15 @@ Page({
       title: '加载中...',
     })
     wx.createSelectorQuery().select('#editor').context(res => {
-      this.editorCtx = res.context;
-     
+      this.editorCtx = res.context;     
       this.editorCtx.setContents({
         html: html,
         success: res => {
           wx.hideLoading();
         }
       })
-      console.log(html)
-      this.data.htmlData = html
     }).exec()  
-    // wx.cloud.downloadFile({
-    //   fileID: url,
-    //   success: res =>{
-    //     let fs = wx.getFileSystemManager()
-    //     let result = fs.readFileSync(res.tempFilePath, "utf-8")
-    //     // 读取文件内容到result
-    //     console.log(result)
-    //     this.setData({
-    //       htmlData : result
-    //     })   
-    //     onEditorReady(); 
-    //     wx.hideLoading();
-    //   },
-    //   fail: err => {
-    //     // handle error
-    //     console.log('[setContents fail]')
-    //   }  
-    // });
   },
-
-  // onEditorReady() {
-  //   wx.createSelectorQuery().select('#editor').context(res => {
-  //     this.editorCtx = res.context;
-  //     this.editorCtx.setContents({
-  //       html: htmlData,
-  //       success: res => {
-  //         console.log('[setContents success]')
-  //       },
-  //       fail: err => {
-  //         console.log('[setContents fail]')
-  //         // handle error
-  //       }  
-        
-  //     })
-  //   }).exec()
-  // },
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成
